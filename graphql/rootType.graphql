@@ -1,0 +1,23 @@
+type Event {
+  _id: ID!
+  name: String!
+  price: Int!
+}
+
+input EventInput {
+  name: String!
+  price: Int!
+}
+
+type RootQuery {
+  events: [Event!]!
+}
+
+type RootMutation {
+  createEvent(eventInput: EventInput): Event
+}
+
+schema {
+  query: RootQuery
+  mutation: RootMutation
+}
